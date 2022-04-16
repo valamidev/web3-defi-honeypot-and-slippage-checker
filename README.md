@@ -13,7 +13,7 @@ The contract simulate a **buy/approve/sell** execution in a single transaction a
   Cronos chain => '0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc'
   Fantom Chain => '0x4208B737e8f3075fD2dCB9cE3358689452f98dCf'
   Polygon Chain => '0xc817b3a104B7d48e3B9C4fbfd624e5D5F03757e0'
-  Avax - wait for deploy fund
+  Avalanche  => '0xf3af9a948f275c2c3b9c61ade16540e66158a1d5' // Trader Joe '0x2B30ddE904B22c0Bba6019543231c857e0Be1DfB'
   Arbitrum - wait for deploy fund
   Harmony - wait for deploy fund
   Aurora - wait for deploy fund
@@ -21,20 +21,6 @@ The contract simulate a **buy/approve/sell** execution in a single transaction a
   Moonbeam - wait for deploy fund
   Hoo Smart Chain - wait for deploy fund
 ```
-
-### How to get this deployed to a new chain?
-
-To get this deployed we need some native/gas currency to deploy the smart contract
-
-```
-Fund address: 0x4030D79d04eE9c437A6B0470e7dcbB40aE796780
-```
-
-or you can deploy the contract ByteCode.
-
-### Why the contract is not open-source?
-
-The ByteCode and the ABI is. The full source will be, once it is deployed majority of the chains.
 
 ### How to use?
 
@@ -59,7 +45,7 @@ Result:
 }
 ```
 
-### My contract is failing on the Honeypot check why?
+### A Token Contract is failing on the Honeypot check why?
 
 1. Required to have a native currency trading pair available (wETH,wBNB,wCro...). Why? because it make no sense to support route like WrappedCoin -> USDT -> AnyToken.
 2. The available liquidity is lower than your simulation required

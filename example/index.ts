@@ -111,7 +111,7 @@ const RunHoneyContract = async (
       to,
       // optional if you want to specify the gas limit
       gas: GAS_LIMIT,
-      gasPrice,
+      gasPrice: Math.floor(Number(gasPrice) * 1.2).toString(),
       // optional if you are invoking say a payable function
       value: TEST_AMOUNT,
       // nonce
@@ -124,6 +124,7 @@ const RunHoneyContract = async (
       buyTax: -1,
       sellTax: -1,
       isHoneypot: 1,
+      error: error,
     };
   }
 
@@ -165,6 +166,26 @@ const RunHoneyContract = async (
   };
 };
 
+/**
+  from: string,
+  honeyCheckAddress: string,
+  token: string,
+  router: string,
+  rcpAddress: string
+ */
+//Avax
+RunHoneyContract(
+  "0x765ccb180f15ead17bbffc38de4478d26214312b",
+  "0x2B30ddE904B22c0Bba6019543231c857e0Be1DfB",
+  "0xA7D7079b0FEaD91F3e65f86E8915Cb59c1a4C664",
+  "0x60aE616a2155Ee3d9A68541Ba4544862310933d4",
+  "https://rpc.ankr.com/avalanche"
+)
+  .catch()
+  .then((e) => console.log("Avax", e));
+
+// Cronos
+
 RunHoneyContract(
   "0x573fbc5996bfb18b3f9b9f8e96b774905bcdc8b6",
   "0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc",
@@ -173,4 +194,16 @@ RunHoneyContract(
   "https://evm-cronos.crypto.org"
 )
   .catch()
-  .then((e) => console.log(e));
+  .then((e) => console.log("Cronos", e));
+
+// Binance TestNet
+
+RunHoneyContract(
+  "0x1dc1217732192ac66145b674e3271533b9e1b93d",
+  "0xcf8eafad86d6490e1a6ba0fdfd09c71608214426",
+  "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7",
+  "0x9Ac64Cc6e4415144C455BD8E4837Fea55603e5c3",
+  "https://data-seed-prebsc-2-s1.binance.org:8545/"
+)
+  .catch()
+  .then((e) => console.log("Bsc Testnet", e));
