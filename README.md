@@ -7,7 +7,7 @@ Cross-chain deployed Smart-contract to detect Honeypot and Slippage for DeFi tok
 There is no magic only EVM(Ethereum Virtual Machine) features are involved.
 The contract simulate a **buy/approve/sell** execution in a single transaction and evaluate the results. Work with any UniSwap2 Router interface.
 
-### Which chain it is already available?
+### Supported Chains
 
 ```
   Cronos chain => '0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc'
