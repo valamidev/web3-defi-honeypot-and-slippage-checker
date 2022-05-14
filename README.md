@@ -10,6 +10,7 @@ The contract simulate a **buy/approve/sell** execution in a single transaction a
 ### Supported Chains
 
 ```
+  Binance chain => '0x385826FBd70DfBB0a7188eE790A36E1fe4f6fc34'
   Cronos chain => '0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc'
   Fantom Chain => '0x4208B737e8f3075fD2dCB9cE3358689452f98dCf'
   Polygon Chain => '0xc817b3a104B7d48e3B9C4fbfd624e5D5F03757e0'
