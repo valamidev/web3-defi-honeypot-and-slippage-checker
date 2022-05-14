@@ -78,7 +78,7 @@ const contractAbi = [
   },
 ];
 
-const TEST_AMOUNT = 10 ** 18 * 2; // Equal with 2 wETH, 2 wBNB, 2 wCRO...
+const TEST_AMOUNT = 10 ** 17 * 5; // Equal with 0.5 wETH, 2 wBNB, 2 wCRO...
 const GAS_LIMIT = "4500000"; // 4.5 million Gas should be enough
 
 const RunHoneyContract = async (
@@ -173,6 +173,18 @@ const RunHoneyContract = async (
   router: string,
   rcpAddress: string
  */
+
+//BSC
+RunHoneyContract(
+  "0x21d45650db732ce5df77685d6021d7d5d1da807f",
+  "0x385826FBd70DfBB0a7188eE790A36E1fe4f6fc34",
+  "0x3f203c1403ce39d4d42c4667287a7fb2b1db1066",
+  "0x10ed43c718714eb63d5aa57b78b54704e256024e",
+  "https://bsc-dataseed3.ninicoin.io/"
+)
+  .catch()
+  .then((e) => console.log("BSC MainNet", e));
+
 //Avax
 RunHoneyContract(
   "0x765ccb180f15ead17bbffc38de4478d26214312b",
