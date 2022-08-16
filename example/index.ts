@@ -83,7 +83,7 @@ const GAS_LIMIT = "4500000"; // 4.5 million Gas should be enough
 
 const RunHoneyContract = async (
   from: string,
-  to: string,
+  honeyCheckerAddress: string,
   token: string,
   router: string,
   rcpAddress: string
@@ -108,7 +108,7 @@ const RunHoneyContract = async (
       // this could be provider.addresses[0] if it exists
       from,
       // target address, this could be a smart contract address
-      to,
+      to: honeyCheckerAddress,
       // optional if you want to specify the gas limit
       gas: GAS_LIMIT,
       gasPrice: Math.floor(Number(gasPrice) * 1.2).toString(),
@@ -219,3 +219,13 @@ RunHoneyContract(
 )
   .catch()
   .then((e) => console.log("Bsc Testnet", e));
+
+RunHoneyContract(
+  "0x2772fcbf3e6d9128bccec98d5138ab63c712cb7b",
+  "0xF662d39558F57031F2Caa45dEaFCD5341D5c7C1E",
+  "0x989095a456c502503d23e139f1a10f2e64034246",
+  "0xa4ee06ce40cb7e8c04e127c1f7d3dfb7f7039c81",
+  "https://rpc03-sg.dogechain.dog"
+)
+  .catch()
+  .then((e) => console.log("DogeChain", e));
