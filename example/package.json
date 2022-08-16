@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "tsc && node ./",
     "test": "tsc && node ./"
   },
   "keywords": [],
