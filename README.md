@@ -17,12 +17,6 @@ The contract simulate a **buy/approve/sell** execution in a single transaction a
   Avalanche  => '0xf3af9a948f275c2c3b9c61ade16540e66158a1d5' // Trader Joe '0x2B30ddE904B22c0Bba6019543231c857e0Be1DfB'
   Astar Network => '0x0aa2037E40a78A169B5214418D66377ab828cb23'
   DogeChain => '0x7c0612357771f6599e8e1a046a02f4beb9496de1' // DogeSwap '0xF662d39558F57031F2Caa45dEaFCD5341D5c7C1E'
-  Arbitrum - wait for deploy fund
-  Harmony - wait for deploy fund
-  Aurora - wait for deploy fund
-  SBC - wait for deploy fund
-  Moonbeam - wait for deploy fund
-  Hoo Smart Chain - wait for deploy fund
 ```
 
 ### How to use?
