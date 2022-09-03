@@ -47,9 +47,9 @@ Result:
 
 1. Required to have a native currency trading pair available (wETH,wBNB,wCro...). Why? because it make no sense to support route like WrappedCoin -> USDT -> AnyToken.
 2. The available liquidity is lower than your simulation required
-3. The Contract is broken or not satisfy the Uniswap2 de facto requirement. (Whitelisting, Blacklisting, Trade Disable, MaxTx, MaxWallet...)
+3. The Contract is broken or not satisfy the Uniswap2 de facto requirement. (Whitelisting, Blacklisting, Trade Disable, MaxTx, Disallow Buy/Sell in same transaction, MaxWallet...)
 
 ### Is this safe?
 
-1. Slippage calculation it is tested over 20.000 different Token pair.
+1. Slippage calculation already tested over 100.000 different Token pair.
 2. Honeypot checking could be bypassed it is still blockchain, but the aim here is to decrease risk.
