@@ -3,51 +3,53 @@
 pragma abicoder v2;
 pragma solidity ^0.8.7;
 
-interface IBEP20 {
-    function totalSupply() external view returns (uint256);
+pragma solidity >=0.5.0;
 
-    function decimals() external view returns (uint8);
-
-    function symbol() external view returns (string memory);
-
-    function name() external view returns (string memory);
-
-    function getOwner() external view returns (address);
-
-    function balanceOf(address account) external view returns (uint256);
-
-    function transfer(address recipient, uint256 amount)
-        external
-        returns (bool);
-
-    function allowance(address _owner, address spender)
-        external
-        view
-        returns (uint256);
-
-    function approve(address spender, uint256 amount) external returns (bool);
-
-    function transferFrom(
-        address sender,
-        address recipient,
-        uint256 amount
-    ) external returns (bool);
-
-    event Transfer(address indexed from, address indexed to, uint256 value);
+interface IERC20 {
     event Approval(
         address indexed owner,
         address indexed spender,
         uint256 value
     );
+    event Transfer(address indexed from, address indexed to, uint256 value);
+
+    function name() external view returns (string memory);
+
+    function symbol() external view returns (string memory);
+
+    function decimals() external view returns (uint8);
+
+    function totalSupply() external view returns (uint256);
+
+    function balanceOf(address owner) external view returns (uint256);
+
+    function allowance(address owner, address spender)
+        external
+        view
+        returns (uint256);
+
+    function approve(address spender, uint256 value) external returns (bool);
+
+    function transfer(address to, uint256 value) external returns (bool);
+
+    function transferFrom(
+        address from,
+        address to,
+        uint256 value
+    ) external returns (bool);
 }
 
-interface IWETH {
+pragma solidity >=0.5.0;
+
+interface IWWDOGE {
     function deposit() external payable;
 
     function transfer(address to, uint256 value) external returns (bool);
 
     function withdraw(uint256) external;
 }
+
+pragma solidity >=0.6.2;
 
 interface IDogeSwapV2Router01 {
     function factory() external view returns (address);
@@ -208,6 +210,10 @@ interface IDogeSwapV2Router01 {
         returns (uint256[] memory amounts);
 }
 
+// File contracts/interfaces/IDogeSwapV2Router02.sol
+
+pragma solidity >=0.6.2;
+
 interface IDogeSwapV2Router02 is IDogeSwapV2Router01 {
     function removeLiquidityWDOGESupportingFeeOnTransferTokens(
         address token,
@@ -255,73 +261,6 @@ interface IDogeSwapV2Router02 is IDogeSwapV2Router01 {
     ) external;
 }
 
-interface IDEXRouter {
-    function factory() external pure returns (address);
-
-    function WETH() external pure returns (address);
-
-    function addLiquidity(
-        address tokenA,
-        address tokenB,
-        uint256 amountADesired,
-        uint256 amountBDesired,
-        uint256 amountAMin,
-        uint256 amountBMin,
-        address to,
-        uint256 deadline
-    )
-        external
-        returns (
-            uint256 amountA,
-            uint256 amountB,
-            uint256 liquidity
-        );
-
-    function addLiquidityETH(
-        address token,
-        uint256 amountTokenDesired,
-        uint256 amountTokenMin,
-        uint256 amountETHMin,
-        address to,
-        uint256 deadline
-    )
-        external
-        payable
-        returns (
-            uint256 amountToken,
-            uint256 amountETH,
-            uint256 liquidity
-        );
-
-    function swapExactTokensForTokensSupportingFeeOnTransferTokens(
-        uint256 amountIn,
-        uint256 amountOutMin,
-        address[] calldata path,
-        address to,
-        uint256 deadline
-    ) external;
-
-    function swapExactETHForTokensSupportingFeeOnTransferTokens(
-        uint256 amountOutMin,
-        address[] calldata path,
-        address to,
-        uint256 deadline
-    ) external payable;
-
-    function swapExactTokensForETHSupportingFeeOnTransferTokens(
-        uint256 amountIn,
-        uint256 amountOutMin,
-        address[] calldata path,
-        address to,
-        uint256 deadline
-    ) external;
-
-    function getAmountsOut(uint256 amountIn, address[] calldata path)
-        external
-        view
-        returns (uint256[] memory amounts);
-}
-
 contract honeyCheckerDogeSwap {
     IDogeSwapV2Router02 public router;
     uint256 approveInfinity =
@@ -338,15 +277,15 @@ contract honeyCheckerDogeSwap {
 
     constructor() {}
 
-    function honeyCheck(address targetTokenAddress, address idexRouterAddres)
+    function honeyCheck(address targetTokenAddress, address idexRouterAddress)
         external
         payable
         returns (HoneyResponse memory response)
     {
-        router = IDogeSwapV2Router02(idexRouterAddres);
+        router = IDogeSwapV2Router02(idexRouterAddress);
 
-        IBEP20 wCoin = IBEP20(router.WWDOGE()); // wETH
-        IBEP20 targetToken = IBEP20(targetTokenAddress); //Test Token
+        IERC20 wCoin = IERC20(router.WWDOGE()); // wETH
+        IERC20 targetToken = IERC20(targetTokenAddress); //Test Token
 
         address[] memory buyPath = new address[](2);
         buyPath[0] = router.WWDOGE();
@@ -360,9 +299,9 @@ contract honeyCheckerDogeSwap {
 
         uint256 expectedAmount = amounts[1];
 
-        IWETH(router.WWDOGE()).deposit{value: msg.value}();
+        IWWDOGE(router.WWDOGE()).deposit{value: msg.value}();
 
-        wCoin.approve(idexRouterAddres, approveInfinity);
+        wCoin.approve(idexRouterAddress, approveInfinity);
 
         uint256 wCoinBalance = wCoin.balanceOf(address(this));
 
@@ -380,7 +319,7 @@ contract honeyCheckerDogeSwap {
 
         uint256 finishBuyGas = gasleft();
 
-        targetToken.approve(idexRouterAddres, approveInfinity);
+        targetToken.approve(idexRouterAddress, approveInfinity);
 
         uint256 startSellGas = gasleft();
 

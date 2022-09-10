@@ -222,7 +222,7 @@ RunHoneyContract(
 
 RunHoneyContract(
   "0x2772fcbf3e6d9128bccec98d5138ab63c712cb7b",
-  "0xF662d39558F57031F2Caa45dEaFCD5341D5c7C1E",
+  "0xDB2135662F55C241EEEef9424B68f661d5c0D298",
   "0x989095a456c502503d23e139f1a10f2e64034246",
   "0xa4ee06ce40cb7e8c04e127c1f7d3dfb7f7039c81",
   "https://rpc03-sg.dogechain.dog"
