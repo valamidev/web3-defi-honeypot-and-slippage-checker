@@ -201,7 +201,7 @@ RunHoneyContract(
 RunHoneyContract(
   "0x573fbc5996bfb18b3f9b9f8e96b774905bcdc8b6",
   "0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc",
-  "0x062E66477Faf219F25D27dCED647BF57C3107d52",
+  "0x52438441073A33b6FcBc70fa3F3F334F2dA19906",
   "0x145677fc4d9b8f19b5d56d1820c48e0443049a30",
   "https://evm-cronos.crypto.org"
 )
