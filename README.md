@@ -11,6 +11,7 @@ The contract simulate a **buy/approve/sell** execution in a single transaction a
 
 ```
   Ethereum => '0xe7e07a2281f1e66e938ae7feefc69db181329f12'
+  Arbitrum => '0x0aa2037E40a78A169B5214418D66377ab828cb23'
   Binance chain => '0x385826FBd70DfBB0a7188eE790A36E1fe4f6fc34' // PancakeSwap '0x52689BA8e1D164A16fb06918A18978d03fF6EB3F'
   Cronos chain => '0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc' // PhenixDex '0x37495E34de11F8Ee72DBb0a71e60C1bd312674fE'
   Fantom Chain => '0x4208B737e8f3075fD2dCB9cE3358689452f98dCf'
