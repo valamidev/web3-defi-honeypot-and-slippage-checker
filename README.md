@@ -31,7 +31,7 @@ const RunHoneyContract = async (
   to: string, // The Honeypot checker contract Address e.g. 0xb5BAA7d906b985C1A1eF0e2dAd19825EbAb5E9fc
   token: string, // the address of the token e.g. 0x062E66477Faf219F25D27dCED647BF57C3107d52 (wBTC)
   router: string, // the DEX router address e.g.  0x145677fc4d9b8f19b5d56d1820c48e0443049a30 (MMfinance router on Cronos)
-  rcpAddress: string // Provide your EVM node e.g. https://evm-cronos.crypto.org
+  rpcAddress: string // Provide your EVM node e.g. https://evm-cronos.crypto.org
 )
 
 Result:
