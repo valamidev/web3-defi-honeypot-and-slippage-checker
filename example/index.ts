@@ -86,7 +86,7 @@ const RunHoneyContract = async (
   honeyCheckerAddress: string,
   token: string,
   router: string,
-  rcpAddress: string
+  rpcAddress: string
 ) => {
   let buyTax = 0;
   let sellTax = 0;
@@ -94,7 +94,7 @@ const RunHoneyContract = async (
   let sellGasCost = 0;
   let isHoneypot = 0;
 
-  const web3 = new Web3(rcpAddress);
+  const web3 = new Web3(rpcAddress);
   const gasPrice = await web3.eth.getGasPrice();
 
   const honeyCheck = new web3.eth.Contract(contractAbi as any);
@@ -171,7 +171,7 @@ const RunHoneyContract = async (
   honeyCheckAddress: string,
   token: string,
   router: string,
-  rcpAddress: string
+  rpcAddress: string
  */
 
 //BSC
