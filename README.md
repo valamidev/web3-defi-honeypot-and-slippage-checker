@@ -4,10 +4,10 @@ Cross-chain deployed Smart-contract to detect Honeypot and Slippage for DeFi tok
 
 ### How it works:
 
-There is no magic only EVM(Ethereum Virtual Machine) features are involved.
-The contract simulate a **buy/approve/sell** execution in a single transaction and evaluate the results. Work with any UniSwap2 Router interface.
+There is no magic involved; only EVM (Ethereum Virtual Machine) features are used. 
+The contract simulates a **buy/approve/sell** execution in a single transaction and evaluates the results. It works with any fork of UniSwap2 Router interface.
 
-### Supported Chains
+### Community deployed contracts:
 
 ```
   Ethereum => '0xe7e07a2281f1e66e938ae7feefc69db181329f12'
@@ -52,5 +52,5 @@ Result:
 
 ### Is this safe?
 
-1. Slippage calculation already tested over 100.000 different Token pair.
-2. Honeypot checking could be bypassed it is still blockchain, but the aim here is to decrease risk.
+1. Slippage calculation already tested over 1.000.000 different Token pair.
+2. Honeypot checking can be bypassed since it's still EVM. However, the aim here is to reduce risk and avoid broken contracts.
