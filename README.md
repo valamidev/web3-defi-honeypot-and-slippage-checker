@@ -19,6 +19,7 @@ The contract simulates a **buy/approve/sell** execution in a single transaction 
   Avalanche  => '0xf3af9a948f275c2c3b9c61ade16540e66158a1d5' // Trader Joe '0x2B30ddE904B22c0Bba6019543231c857e0Be1DfB'
   Astar Network => '0x0aa2037E40a78A169B5214418D66377ab828cb23'
   DogeChain => '0x7c0612357771f6599e8e1a046a02f4beb9496de1' // DogeSwap '0xDB2135662F55C241EEEef9424B68f661d5c0D298'
+  PulseChain => '0xBe4A121B0fa604438B61e49a4a818A00F50c09e1'
 ```
 
 ### How to use?
